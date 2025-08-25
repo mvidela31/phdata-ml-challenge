@@ -62,7 +62,7 @@ async def get_versions(model_package: str) -> Dict[str, List[int]]:
         raise HTTPException(status_code=500, detail=str(err)) from err
 
 
-@app.post("/download_model")
+@app.put("/download_model")
 async def download_model(data: InputModelDownload) -> Dict[str, str]:
     """
     Download a model from URL.
@@ -89,7 +89,7 @@ async def download_model(data: InputModelDownload) -> Dict[str, str]:
         raise HTTPException(status_code=500, detail=str(err)) from err
 
 
-@app.post("/update_model")
+@app.put("/update_model")
 async def update_model(data: InputModelUpdate) -> Dict[str, str]:
     """
     Update the regression model version.
@@ -116,7 +116,7 @@ async def update_model(data: InputModelUpdate) -> Dict[str, str]:
         raise HTTPException(status_code=500, detail=str(err)) from err
     
 
-@app.post("/delete_model")
+@app.delete("/delete_model")
 async def delete_model(data: InputModelDelete) -> Dict[str, str]:
     """
     Delete the regression model version.
