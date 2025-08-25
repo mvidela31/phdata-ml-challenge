@@ -1,0 +1,1 @@
+from .data_ingestor import load_house_pricing_dataset  # noqa: F401

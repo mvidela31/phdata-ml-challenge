@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=67.0", "setuptools_scm[toml]>=7.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "house-pricing-data-ingestion"
+version = "0.0.1"
+authors = [
+    { name = "Miguel Videla", email = "miguel.videla@ug.uchile.cl" },
+]
+description = "A small package containing the data ingestion component for house pricing."
+readme = "README.md"
+requires-python = ">=3.9"
+dynamic = ["dependencies"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.scripts]
+ingest = "house_pricing.data_ingestion.ingest:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["house_pricing.data_ingestion"]
+
+[tool.setuptools.package-data]
+"house_pricing.data_ingestion" = ["data/*"]
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+[tool.setuptools.dynamic.optional-dependencies]
+dev = {file = ["requirements-dev.txt"]}
+
+[project.urls]
+"Repository" = "https://github.com/mvidela31/phdata-ml-challenge/house-pricing.git"
+"Bug Tracker" = "https://github.com/mvidela31/phdata-ml-challenge/house-pricing/issues"

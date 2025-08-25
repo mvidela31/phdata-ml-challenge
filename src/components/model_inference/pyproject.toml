@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=67.0", "setuptools_scm[toml]>=7.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "house-pricing-inference"
+version = "0.0.1"
+authors = [
+    { name = "Miguel Videla", email = "miguel.videla@ug.uchile.cl" },
+]
+description = "A small package containing the model inference component for house pricing."
+readme = "README.md"
+requires-python = ">=3.9"
+dynamic = ["dependencies"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.scripts]
+run-server = "house_pricing.model_inference.run_server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["house_pricing.model_inference"]
+
+[tool.setuptools.package-data]
+"house_pricing.model_inference" = ["data/*"]
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+[tool.setuptools.dynamic.optional-dependencies]
+dev = {file = ["requirements-dev.txt"]}
+
+[project.urls]
+"Repository" = "https://github.com/mvidela31/phdata-ml-challenge/house-pricing.git"
+"Bug Tracker" = "https://github.com/mvidela31/phdata-ml-challenge/house-pricing/issues"

@@ -1,0 +1,7 @@
+pre-commit==3.7.1
+ruff==0.5.0
+pytest==8.2.2
+pytest-cov==5.0.0
+src/components/data_ingestion[dev]
+src/components/model_training[dev]
+src/components/model_inference[dev]

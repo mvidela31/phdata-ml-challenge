@@ -1,0 +1,39 @@
+[project]
+name = "house-pricing"
+version = "0.0.1"
+authors = [
+    { name = "Miguel Videla", email = "miguel.videla@ug.uchile.cl" },
+]
+description = "House pricing based on machine learning."
+readme = "README.md"
+requires-python = ">=3.9"
+keywords = [
+    "house-pricing",
+    "regression",
+    "ml-project-challenge-2",
+    "phdata",
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Repository" = "https://github.com/mvidela31/phdata-ml-challenge/house-pricing.git"
+"Bug Tracker" = "https://github.com/mvidela31/phdata-ml-challenge/house-pricing/issues"
+
+[tool.ruff]
+line-length = 99
+lint.select = [
+    "E", # pycodestyle
+    "F", # pyflakes
+    "I", # isort
+    "B", # flake8-bugbear
+]
+lint.fixable = [
+    "I", # for safety reasons we will only fix isort, and lint the other rules
+]
+lint.ignore = [
+    "B006",
+]
